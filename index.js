@@ -78,15 +78,16 @@ const bookings = [
         "endTime":"01:00am",
         "roomId":500
     }];
-    const MONGO_URL = "mongodb://127.0.0.1:27017/Database1"
+    // const MONGO_URL = "mongodb://127.0.0.1:27017/Database1"
 
 
     async function createConnection() {
-        const client = new MongoClient(MONGO_URL,{ useNewUrlParser: true, useUnifiedTopology: true });
+        const client = new MongoClient('mongodb://127.0.0.1:27017/Database1');
         await client.connect()
         console.log("MONGODB connected")
         return client;
     }
+
     async function startServer() {
    const client = await createConnection();
 
